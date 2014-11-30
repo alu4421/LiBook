@@ -1,5 +1,33 @@
 .row
 	.text-center.v-center
-		%a{:href => "/escanear"}
-			%img.img-thumbnail{:alt => "Imagenes Escaner Codigo", :src => "img/escanear-codigo.jpg"}/
-			
+		.col-md-6
+			%h1 CAMARA
+			%br/
+			%script(src="/js/webcam.js")
+			%script{:language => "JavaScript"}
+				webcam.set_api_url( 'libook.herokuapp.com/data' );
+				webcam.set_quality( 100 ); // JPEG quality (1 - 100)
+				webcam.set_shutter_sound( true ); // play shutter click sound
+			%script{:language => "JavaScript"}
+				document.write( webcam.get_html(320, 240, 640, 480) );
+			%script{:language => "JavaScript"}
+				webcam.set_hook( 'onComplete', 'my_completion_handler' );
+			  
+				function take_snapshot() {
+				webcam.snap();
+				}
+			  
+				function my_completion_handler(msg) {
+				alert(msg);
+				webcam.reset();
+				}
+			%form.form-inline{:action => "/", :method => "post"}
+				%br/
+				%button.btn.btn-lg.btn-primary{:onClick => "webcam.configure()", :type => "button", :value => "Configure..."}Configuracion
+				%button.btn.btn-lg.btn-primary{:onClick => "take_snapshot()", :type => "button", :value => "Upload"}Sacar Foto
+		.col-md-6
+			%br/
+			%form.form-inline{:action => "/", :method => "get"}
+			%input.form-control.input-lg{:autofocus => "", :name => "isbn", :placeholder => "Introduce El ISBN", :size => "20", :type => "text", :value => ""}/
+			%button.btn.btn-lg.btn-primary{:type => "submit", :value => "Submit"} Leer
+			%br/

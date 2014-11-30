@@ -53,6 +53,12 @@ end
 get '/escanear' do
   haml :escaner
 end
+
+post '/data' do
+  File.open('img/escaner/data.jpeg','wb') {|file| file.write request.body.read }
+  "Result: photo saved!"
+end
+
 #Redirect
 get '/auth/:name/callback' do
     session[:auth] = @auth = request.env['omniauth.auth']
