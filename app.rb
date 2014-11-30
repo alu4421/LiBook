@@ -50,6 +50,9 @@ get '/' do
   haml :index
 end
 
+get '/escanear' do
+  haml :escaner
+end
 #Redirect
 get '/auth/:name/callback' do
     session[:auth] = @auth = request.env['omniauth.auth']
