@@ -47,11 +47,23 @@ Base = 36 #base alfanumerica 36, no contiene la ñ para la ñ incorporar la base
 #End User Control
 
 get '/' do
-  haml :index
+  if session[:auth] then
+    haml :principal
+  else
+    haml :index
+  end
+end
+
+get '/ejemplo' do
+  haml :ejemplo
 end
 
 get '/escanear' do
   haml :escaner
+end
+
+get '/info' do
+  haml :info
 end
 
 post '/data' do
@@ -64,10 +76,14 @@ get '/auth/:name/callback' do
     session[:auth] = @auth = request.env['omniauth.auth']
     session[:email] = @auth['info'].email
     session[:nombre] = @auth['info'].name
-    if session[:auth] then
-      redirect '/'
-    end
-    haml :index
+    redirect '/'
+end
+
+post '/insertar' do
+  json = RestClient.get "https://www.googleapis.com/books/v1/volumes?q=isbn:#{params[:url]}"
+  obj = JSON.parse(json)
+  
+  "hola"
 end
 
 get '/sign_google/?' do

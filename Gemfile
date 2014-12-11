@@ -15,6 +15,7 @@ gem 'dm-core'
 gem 'dm-migrations'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'json'
 
 group :production do
 	gem "pg"

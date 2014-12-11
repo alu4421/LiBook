@@ -1,0 +1,34 @@
+.row
+	.text-center.v-center
+		.col-xs-6
+			%a{:href => "/escanear"}
+			%img.img-thumbnail{:alt => "Imagenes Escaner Codigo", :src => "img/escanear-codigo.jpg"}/
+		.col-xs-6
+			%form.form-inline{:action => "/insertar", :method => "post"}
+				.form-group{:style => "text-align:center;margin:0 auto;"}
+				%input.form-control.input-lg{:name => "isbn", :placeholder => "Opcional ISBN", :size => "20", :type => "text", :value => ""}/
+				%button.btn.btn-lg.btn-primary{:type => "submit", :value => "Submit"} Buscar
+.row
+	.col-xs-12
+		.text-center.v-center
+			%h1 Tu Biblioteca
+		%table.table-responsive.table.table-hover
+			%thead
+				%tr
+					%th Portada
+					%th Titulo
+					%th Autor
+					%th Editorial
+					%th Categoria
+					%th Comentario
+					%th Prestado
+			%tbody
+				%tr
+					%td Hola
+					%td
+						%a{:href=>"/" , :target=>"_blank"} Hola
+					%td 
+						%a{:href=>"/", :target=>"_blank"} Hola
+					%td Hola
+					%td jae
+					%td aje

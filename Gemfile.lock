@@ -149,6 +149,7 @@ DEPENDENCIES
   dm-sqlite-adapter
   erubis
   haml
+  json
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
