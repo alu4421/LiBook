@@ -1,19 +1,25 @@
 .row
-	.text-center.v-center
-		%h1 Titulo del Libro (Año)
+	- @info.each do |valor|
+		.text-center.v-center
+			%h1 #{valor.titulo}
 
-	.col-xs-4
-		%a{:href => "/escanear"}
-			%img.img-thumbnail{:alt => "Imagenes Escaner Codigo", :src => "img/escanear-codigo.jpg"}/
+		.col-xs-4
+			%a{:href => ""}
+				%img.img-thumbnail{:alt => "Imagen libro #{valor.titulo}", :src => "#{valor.img}"}/
 
-	.col-xs-8
-		%h3 Titulo:
-		%h3 Autor:
-		%h3 Editorial:
-		%h3 Año:
-		%h3 Categoria:
-		%h3 Idioma:
-		%h3 ISBN:
-.row
-	.col-xs-12
-		%h1 Sinopsis:
+		
+		.col-xs-8
+			%h3 Titulo: #{valor.titulo}
+			%h3 Autor: #{valor.autores}
+			%h3 Editorial: #{valor.editorial}
+			%h3 Fecha Publicación: #{valor.f_publicacion}
+			%h3 Categoria: #{valor.categoria}
+			%h3 Idioma: #{valor.idioma}
+			%h3 ISBN10: #{valor.isbn10}
+			%h3 ISBN13: #{valor.isbn13}
+		.col-xs-12
+			%h2 Sinopsis:
+			%h2 #{valor.descripcion}
+
+		.col-xs-12
+			%a{:href=>"#{valor.url_google}" , :target=>"_blank"} Pinche aquí para acceder a más información en Google.

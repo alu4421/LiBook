@@ -11,7 +11,7 @@
 			%br
 			%form.form-inline{:action => "/insertar", :method => "post"}
 				.form-group{:style => "text-align:center;margin:0 auto;"}
-				%input.form-control.input-lg{:name => "isbn", :placeholder => "Opcional ISBN", :size => "20", :type => "text", :value => "9780385537674"}/
+				%input.form-control.input-lg{:name => "isbn", :placeholder => "Opcional ISBN", :size => "20", :type => "text", :value => ""}/
 				%button.btn.btn-lg.btn-primary{:type => "submit", :value => "Submit"} Buscar
 .row
 	.col-xs-12
@@ -30,7 +30,7 @@
 				- @list.each do |valor|
 					%tr
 						%td 
-							%a{:href=>"/#{valor.img}", :target=>"_blank"}
+							%a{:href=>"/info/#{valor.id}", :target=>"_blank"}
 								%img{:class => "img-responsive", :src=>"#{valor.img}", :width => "50"}/
 						%td
 							%a{:href=>"/" , :target=>"_blank"} #{valor.titulo}

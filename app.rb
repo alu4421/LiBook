@@ -65,7 +65,8 @@ get '/escanear' do
   haml :escaner
 end
 
-get '/info' do
+get '/info/:id' do
+  @info = Biblioteca.all(:id => params[:id])
   haml :info
 end
 
@@ -116,7 +117,7 @@ post '/insertar' do
     img = arr_volumeInfo['imageLinks'].first
     img = img[1]
   else
-    img = 'img/no_disponible.jpg'
+    img = 'img/no_disponible.png'
   end
   if arr_volumeInfo['title'] then
     titulo = arr_volumeInfo['title']
@@ -185,11 +186,27 @@ post '/insertar' do
     isbn13 = "No Identificado"
   end
 
+  if arr_volumeInfo['publishedDate'] then
+      f_publicacion = arr_volumeInfo['publishedDate']
+  else
+      f_publicacion = "No Identificado"
+  end
+
+  if arr_volumeInfo['language'] then
+      idioma = arr_volumeInfo['language']
+      if idioma == "en" then
+        idioma = "Inglés"
+      elsif idioma == "es" then
+        idioma = "Español"
+      end
+  else
+      idioma = "No Identificado"
+  end
+
   #insertarmos en la base de datos con la funcion first_or_create 
-  @list = Biblioteca.first_or_create(:img => img, :titulo  => titulo, :autores => autores, :editorial => editorial, :categoria => categoria, :url_google => url_google, :isbn10 => isbn10, :isbn13 => isbn13, :descripcion => descripcion, :npag => npag, :email => session[:email] )
+  @list = Biblioteca.first_or_create(:img => img, :titulo  => titulo, :autores => autores, :editorial => editorial, :categoria => categoria, :url_google => url_google, :isbn10 => isbn10, :isbn13 => isbn13, :descripcion => descripcion, :npag => npag, :f_publicacion => f_publicacion, :idioma => idioma, :email => session[:email] )
   
   redirect '/'
-
 end
 
 get '/sign_google/?' do

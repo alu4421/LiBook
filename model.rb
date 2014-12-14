@@ -17,6 +17,8 @@ class Biblioteca
     property :npag, Text
     property :descripcion, Text
     property :url_google, Text
+    property :f_publicacion, Text
+    property :idioma, Text
     property :email, Text
     property :created_at, DateTime
 
