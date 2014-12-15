@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-require 'coveralls'
-Coveralls.wear!
+# require 'coveralls'
+# Coveralls.wear!
 
 ENV['RACK_ENV'] = 'test'
 require_relative '../app.rb'
