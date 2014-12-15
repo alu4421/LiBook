@@ -16,6 +16,8 @@ gem 'dm-migrations'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'json'
+gem 'selenium-webdriver'
+gem 'coveralls', require: false
 
 group :production do
 	gem "pg"

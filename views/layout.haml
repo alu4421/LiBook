@@ -19,10 +19,10 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-        #navbar-main.navbar-collapse.collapse            
+        #navbar-main.navbar-collapse.collapse
           %nav.navbar-nav.navbar-right
             -if !session[:auth]
-              %a.navbar-brand{:href => "/"} Registrese: 
+              %a.navbar-brand{:href => "/"} Regístrese: 
               %a{:href => "/sign_google"}
                 %img{:alt => "Google", :src => "/img/ico/googleplus.ico", :width => "40"}/
               %a{:href => "#"}
@@ -38,4 +38,3 @@
     / script references
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"}
     %script{:src => "/js/bootstrap.min.js"}
-    
