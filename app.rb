@@ -117,7 +117,7 @@ post '/insertar' do
     img = arr_volumeInfo['imageLinks'].first
     img = img[1]
   else
-    img = 'img/no_disponible.png'
+    img = '/img/no_disponible.png'
   end
   if arr_volumeInfo['title'] then
     titulo = arr_volumeInfo['title']
@@ -173,10 +173,10 @@ post '/insertar' do
       isbn = arr_volumeInfo['industryIdentifiers'].first
       isbn = isbn['type']
       #averiguamos que tipo de ISBN tiene y asignamos el valor correspondiente
-      if isbn == "isbn10" then
+      if isbn == "isbn_10" then
           isbn10 = isbn['identifier']
           isbn13 = "No Identificado"
-      else
+      elsif isbn == "isbn_13"
         isbn13 = isbn['identifier']
         isbn10 = "No Identificado"
       end

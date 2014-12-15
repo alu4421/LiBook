@@ -33,8 +33,10 @@
 							%a{:href=>"/info/#{valor.id}", :target=>"_blank"}
 								%img{:class => "img-responsive", :src=>"#{valor.img}", :width => "50"}/
 						%td
-							%a{:href=>"/" , :target=>"_blank"} #{valor.titulo}
+							%a{:href=>"/info/#{valor.id}" , :target=>"_blank"} #{valor.titulo}
 						%td 
-							%a{:href=>"/", :target=>"_blank"} #{valor.autores}
-						%td #{valor.editorial}
-						%td #{valor.categoria}
+							%a{:href=>"/info/#{valor.id}" , :target=>"_blank"} #{valor.autores}
+						%td 
+							%a{:href=>"/info/#{valor.id}" , :target=>"_blank"} #{valor.editorial}
+						%td 
+							%a{:href=>"/info/#{valor.id}" , :target=>"_blank"} #{valor.categoria}
