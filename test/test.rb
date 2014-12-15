@@ -63,6 +63,10 @@ describe "Contenido de la web" do
     @r_tw = 'http://localhost:9292/sign_twitter/'
     @r_fb = 'http://localhost:9292/#/'
     @r = 'ok'
+    @esc = 'http://localhost:9292/escanear'
+    @haniel = 'http://alu4421.github.io/'
+    @karen = 'http://alu0100402001.github.io/'
+    @jonay = 'http://alu0100600674.github.io/'
     @browser.get(@web_local) #Cambiar por @web cuando esté en Heroku
       @browser.manage.timeouts.implicit_wait = 5
   end
@@ -102,5 +106,35 @@ describe "Contenido de la web" do
     assert_equal(@r, tw)
     #assert_equal(@r_gl1, @browser.current_url)
   end
+
+  it "Link a la página principal" do
+    index = @browser.find_element(:id, "btn-inicio").click
+    assert_equal(@r, index)
+    assert_equal(@web_local, @browser.current_url)
+  end
+
+  # it "Página de Haniel" do
+  #   h = @browser.find_element(:id, "btn-haniel").click
+  #   assert_equal(@r, h)
+  #   assert_equal(@haniel, @browser.current_url)
+  # end
+  #
+  # it "Página de Karen" do
+  #   k = @browser.find_element(:id, "btn-karen").click
+  #   assert_equal(@r, k)
+  #   assert_equal(@karen, @browser.current_url)
+  # end
+  #
+  # it "Página de Jonay" do
+  #   j = @browser.find_element(:id, "btn-jonay").click
+  #   assert_equal(@r, j)
+  #   assert_equal(@jonay, @browser.current_url)
+  # end
+
+  # it "Acceso a la función escanear" do
+  #   esc = @browser.find_element(:id, "btn-escanear").click
+  #   assert_equal(@r, esc)
+  #   assert_equal(@esc, @browser.current_url)
+  # end
 
 end
