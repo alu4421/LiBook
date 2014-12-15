@@ -22,13 +22,13 @@
         #navbar-main.navbar-collapse.collapse
           %nav.navbar-nav.navbar-right
             -if !session[:auth]
-              %a.navbar-brand{:href => "/"} Regístrese: 
+              %a.navbar-brand{:href => "/"} Regístrese:
               %a{:href => "/sign_google"}
-                %img{:alt => "Google", :src => "/img/ico/googleplus.ico", :width => "40"}/
+                %img{:id => "google-auth", :alt => "Google", :src => "/img/ico/googleplus.ico", :width => "40"}/
               %a{:href => "#"}
-                %img{:alt => "Facebook", :src => "/img/ico/facebook.ico", :width => "40"}/
+                %img{:id => "facebook-auth", :alt => "Facebook", :src => "/img/ico/facebook.ico", :width => "40"}/
               %a{:href => "/sign_twitter"}
-                %img{:alt => "Twitter", :src => "/img/ico/twitter.ico", :width => "40"}/
+                %img{:id => "twitter-auth", :alt => "Twitter", :src => "/img/ico/twitter.ico", :width => "40"}/
             -elsif session[:auth]
               %a.navbar-brand{:href => "/"} Bienvenido, #{session[:nombre]}
               %a.button.btn.btn-danger{:href=>'/logout', :type => "button"} Salir
