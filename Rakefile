@@ -1,7 +1,7 @@
 task :default => :test
 
 desc "run test"
-  task :text do
+  task :test do
     sh "ruby test/test.rb"
 end
 
