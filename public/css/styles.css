@@ -5,7 +5,7 @@ html,body {
 }
 
 /*.pbackground {
-    min-height: 100%; 
+    min-height: 100%;
     background: url('../img/fondo-libook.png') no-repeat fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -52,3 +52,15 @@ h1 {
 .container-down {
   margin-top:2%;
   }
+
+.h1-principal {
+  font-size: 70px;
+//  font-family: "Comic Sans MS";
+  color: #2E64FE;
+}
+
+.h2-principal {
+//  font-family: "Comic Sans MS";
+  //color:#DDCCEE;
+  color: #FFAA41;
+}
