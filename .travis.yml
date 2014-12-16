@@ -7,6 +7,7 @@ rvm:
 - rbx-19mode
 script:
 - bundle install --without production
+- bundle exec rake
 branches:
   only:
   - master
