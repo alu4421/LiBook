@@ -1,12 +1,12 @@
 language: ruby
 rvm:
-  - 2.0.0
-before_install:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
+- 1.9.3
+- 2.0.0
+- 2.1.2
+- rbx-18mode
+- rbx-19mode
 script:
-  "bundle exec rake test"
-#  - ruby test/test.rb
+- bundle install --without production
 branches:
   only:
-    - master
+  - master
