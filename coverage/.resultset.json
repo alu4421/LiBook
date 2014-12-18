@@ -1,7 +1,7 @@
 {
   "Unit Tests": {
     "coverage": {
-      "/home/jonay/sytw/LiBook/app.rb": [
+      "/Users/haniel/Tareas/SYTW/LiBook/app.rb": [
         null,
         1,
         1,
@@ -227,7 +227,7 @@
         null,
         null
       ],
-      "/home/jonay/sytw/LiBook/model.rb": [
+      "/Users/haniel/Tareas/SYTW/LiBook/model.rb": [
         1,
         1,
         1,
@@ -255,6 +255,6 @@
         null
       ]
     },
-    "timestamp": 1418671791
+    "timestamp": 1418917467
   }
 }
