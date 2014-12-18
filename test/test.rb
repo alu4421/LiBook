@@ -44,6 +44,11 @@ describe "Tests de la pagina raiz ('/') con metodo get" do
     assert last_response.body.include?("Úsalo con tus redes sociales Google+, Facebook y Twitter.")
   end
 
+  it "Animación a usar LiBook" do
+    get '/'
+    assert last_response.body.include?("Si estás cansado de no encontrar un libro en tu inmensa biblioteca, no esperes mas y únete al gestor de libros Libook.")
+  end
+
   # it "El foot deberia de contener" do
   #   get '/'
   #   assert_match %Q{<p class='pull-right'>Leinah ©Copyright 2014    </p>}, last_response.body
@@ -89,8 +94,18 @@ describe "Contenido de la web" do
     assert_equal("Si estás cansado de no encontrar un libro en tu inmensa biblioteca, no esperes mas y únete al gestor de libros Libook.", titulo2)
   end
 
+  it "Redes Sociales" do
+    rs = @browser.find_element(:id, "rrss").text
+    assert_equal("Úsalo con tus redes sociales Google+, Facebook y Twitter.", rs)
+  end
+
   it "Logo" do
     logo = @browser.find_element(:id, "logo")
+  end
+
+  it "Título de registro" do
+    r = @browser.find_element(:id, "registrese").text
+    assert_equal("Regístrese:", r)
   end
 
   it "Registro con Google" do
@@ -133,6 +148,11 @@ describe "Contenido de la web" do
     j = @browser.find_element(:id, "btn-jonay").click
     assert_equal(@r, j)
     assert_equal(@jonay, @browser.current_url)
+  end
+
+  it "Copyright" do
+    c = @browser.find_element(:id, "copyright").text
+    assert_equal("LiBook ©Copyright 2014", c)
   end
 
 end

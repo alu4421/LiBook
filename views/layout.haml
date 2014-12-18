@@ -22,7 +22,7 @@
         #navbar-main.navbar-collapse.collapse
           %nav.navbar-nav.navbar-right
             -if !session[:auth]
-              %a.navbar-brand{:href => "/"} Regístrese:
+              %a.navbar-brand{:id => "registrese", :href => "/"} Regístrese:
               %a{:href => "/sign_google"}
                 %img{:id => "google-auth", :alt => "Google", :src => "/img/ico/googleplus.ico", :width => "40"}/
               %a{:href => "#"}
@@ -36,10 +36,13 @@
       .container
         .navbar-header
           %a.navbar-brand{:id => "btn-haniel", :role => "navigation", :href => "http://alu4421.github.io/"} Haniel
+          .navbar-brand |
           %a.navbar-brand{:id => "btn-karen", :role => "navigation", :href => "http://alu0100402001.github.io/"} Karen
+          .navbar-brand |
           %a.navbar-brand{:id => "btn-jonay", :role => "navigation", :href => "http://alu0100600674.github.io/"} Jonay
         #navbar-main.navbar-collapse.collapse
           %nav.navbar-nav.navbar-right
+            .navbar-brand{:id => "copyright"} LiBook ©Copyright 2014
       / /.navbar-collapse
     .container
       =yield
