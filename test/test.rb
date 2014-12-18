@@ -41,7 +41,7 @@ describe "Tests de la pagina raiz ('/') con metodo get" do
 
   it "Redes sociales" do
     get '/'
-    assert last_response.body.include?("Úsalo con tus redes sociales Facebook y Twitter")
+    assert last_response.body.include?("Úsalo con tus redes sociales Google+, Facebook y Twitter.")
   end
 
   # it "El foot deberia de contener" do
@@ -87,6 +87,10 @@ describe "Contenido de la web" do
   it "Invitación a usar Libook" do
     titulo2 = @browser.find_element(:tag_name, "h2").text
     assert_equal("Si estás cansado de no encontrar un libro en tu inmensa biblioteca, no esperes mas y únete al gestor de libros Libook.", titulo2)
+  end
+
+  it "Logo" do
+    logo = @browser.find_element(:id, "logo")
   end
 
   it "Registro con Google" do
