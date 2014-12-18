@@ -57,10 +57,6 @@ get '/' do
   end
 end
 
-get '/ejemplo' do
-  haml :ejemplo
-end
-
 get '/escanear' do
   haml :escaner
 end
@@ -70,10 +66,12 @@ get '/info/:id' do
   haml :info
 end
 
+#pruebas
 post '/data' do
   File.open('img/escaner/data.jpeg','wb') {|file| file.write request.body.read }
   "Result: photo saved!"
 end
+#fin
 
 #Redirect
 get '/auth/:name/callback' do
@@ -173,10 +171,10 @@ post '/insertar' do
       isbn = arr_volumeInfo['industryIdentifiers'].first
       isbn = isbn['type']
       #averiguamos que tipo de ISBN tiene y asignamos el valor correspondiente
-      if isbn == "isbn_10" then
+      if isbn == "ISBN_10" then
           isbn10 = isbn['identifier']
           isbn13 = "No Identificado"
-      elsif isbn == "isbn_13"
+      elsif isbn == "ISBN_13"
         isbn13 = isbn['identifier']
         isbn10 = "No Identificado"
       end
