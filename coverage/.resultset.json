@@ -1,7 +1,7 @@
 {
   "Unit Tests": {
     "coverage": {
-      "/Users/haniel/Tareas/SYTW/LiBook/app.rb": [
+      "/home/jonay/sytw/LiBook/app.rb": [
         null,
         1,
         1,
@@ -42,22 +42,22 @@
         null,
         null,
         1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        5,
+        0,
         0,
         0,
         null,
-        5,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
         null,
         null,
         null,
@@ -227,7 +227,7 @@
         null,
         null
       ],
-      "/Users/haniel/Tareas/SYTW/LiBook/model.rb": [
+      "/home/jonay/sytw/LiBook/model.rb": [
         1,
         1,
         1,
@@ -255,6 +255,6 @@
         null
       ]
     },
-    "timestamp": 1418917467
+    "timestamp": 1418917820
   }
 }

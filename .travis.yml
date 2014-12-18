@@ -1,5 +1,12 @@
 language: ruby
 rvm: 2.1.0
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - bundle exec rake rackup &
+
+language: ruby
+rvm: 2.1.0
 script:
    "bundle exec rake"
 before_install:
