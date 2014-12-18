@@ -33,6 +33,15 @@
               %a.navbar-brand{:href => "/"} Bienvenido, #{session[:nombre]}
               %a.button.btn.btn-danger{:href=>'/logout', :type => "button"} Salir
       / /.navbar-collapse
+    .navbar.navbar-default.navbar-fixed-bottom
+      .container
+        .navbar-header
+          %a.navbar-brand{:id => "btn-haniel", :role => "navigation", :href => "http://alu4421.github.io/"} Haniel
+          %a.navbar-brand{:id => "btn-karen", :role => "navigation", :href => "http://alu0100402001.github.io/"} Karen
+          %a.navbar-brand{:id => "btn-jonay", :role => "navigation", :href => "http://alu0100600674.github.io/"} Jonay
+        #navbar-main.navbar-collapse.collapse
+          %nav.navbar-nav.navbar-right
+      / /.navbar-collapse
     .container
       =yield
     / script references

@@ -113,28 +113,22 @@ describe "Contenido de la web" do
     assert_equal(@web_local, @browser.current_url)
   end
 
-  # it "Página de Haniel" do
-  #   h = @browser.find_element(:id, "btn-haniel").click
-  #   assert_equal(@r, h)
-  #   assert_equal(@haniel, @browser.current_url)
-  # end
-  #
-  # it "Página de Karen" do
-  #   k = @browser.find_element(:id, "btn-karen").click
-  #   assert_equal(@r, k)
-  #   assert_equal(@karen, @browser.current_url)
-  # end
-  #
-  # it "Página de Jonay" do
-  #   j = @browser.find_element(:id, "btn-jonay").click
-  #   assert_equal(@r, j)
-  #   assert_equal(@jonay, @browser.current_url)
-  # end
+  it "Página de Haniel" do
+    h = @browser.find_element(:id, "btn-haniel").click
+    assert_equal(@r, h)
+    assert_equal(@haniel, @browser.current_url)
+  end
 
-  # it "Acceso a la función escanear" do
-  #   esc = @browser.find_element(:id, "btn-escanear").click
-  #   assert_equal(@r, esc)
-  #   assert_equal(@esc, @browser.current_url)
-  # end
+  it "Página de Karen" do
+    k = @browser.find_element(:id, "btn-karen").click
+    assert_equal(@r, k)
+    assert_equal(@karen, @browser.current_url)
+  end
+
+  it "Página de Jonay" do
+    j = @browser.find_element(:id, "btn-jonay").click
+    assert_equal(@r, j)
+    assert_equal(@jonay, @browser.current_url)
+  end
 
 end
