@@ -1,6 +1,6 @@
 .row
 	.text-center.v-center
-		-if @opc == '/1'
+		-if @opc == '/001'
 			%a{:href => "/"}
 				.alert.alert-success.alert-dismissable
 					%button.close{"data-dismiss" => "alert",:type => "button"} &times;
@@ -10,7 +10,7 @@
 				.alert.alert-danger.alert-dismissable
 					%button.close{"data-dismiss" => "alert", :type => "button"} &times;
 					%h2 Error Insertar libro
-		-elsif @opc == '/2'
+		-elsif @opc == '/002'
 			%a{:href => "/"}
 				.alert.alert-warning.alert-dismissable
 					%button.close{"data-dismiss" => "alert", :type => "button"} &times;
