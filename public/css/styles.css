@@ -40,6 +40,13 @@ h1 {
   border: 0;
 
 }
+
+.navbar-fixed-bottom{
+  background-color:#110022;
+  border: 0;
+
+}
+
 .container-full a {
   color:#fff;
   text-decoration: none;
