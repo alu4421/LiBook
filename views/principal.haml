@@ -1,5 +1,21 @@
+
 .row
 	.text-center.v-center
+		-if @opc == '1'
+			%a{:href => "/"}
+				.alert.alert-success.alert-dismissable
+					%button.close{"data-dismiss" => "alert",:type => "button"} &times;
+					%h2 Libro insertado correctamente.
+		-elsif @opc == '-1'
+			%a{:href => "/"}
+				.alert.alert-success.alert-dismissable
+					%button.close{"data-dismiss" => "alert", :type => "button"} &times;
+					%h2 Error Insertar libro
+		-elsif @opc == '2'
+			%a{:href => "/"}
+				.alert.alert-success.alert-dismissable
+					%button.close{"data-dismiss" => "alert", :type => "button"} &times;
+					%h2 No se encontrarón datos en Google Books, revise el ISBN.
 		.col-xs-6
 			%h1 Escanear Código
 			%a{:href => "/escanear"}
@@ -25,7 +41,6 @@
 					%th Autor
 					%th Editorial
 					%th Categoria
-					%th Comentario
 			%tbody
 				- @list.each do |valor|
 					%tr

@@ -48,7 +48,10 @@ Base = 36 #base alfanumerica 36, no contiene la ñ para la ñ incorporar la base
 #End User Control
 
 
-get '/' do
+get'/:opc?' do
+  if params[:opc] then
+    @opc = params[:opc]
+  end
   if session[:auth] then
     @list = Biblioteca.all(:order => [ :id.asc ], :email => session[:email])
     haml :principal
@@ -90,7 +93,7 @@ post '/insertar' do
   
   #Si la busqueda no ha dado ninguno por poco que sea devolvemos mensaje al usuario
   if my_hash["totalItems"] == 0  then
-      redirect "/"
+      redirect "/2"
   end
   #Llegados a esta parte tenemos algun tipo de datos con el que trabajar
 
@@ -202,9 +205,11 @@ post '/insertar' do
   end
 
   #insertarmos en la base de datos con la funcion first_or_create 
-  @list = Biblioteca.first_or_create(:img => img, :titulo  => titulo, :autores => autores, :editorial => editorial, :categoria => categoria, :url_google => url_google, :isbn10 => isbn10, :isbn13 => isbn13, :descripcion => descripcion, :npag => npag, :f_publicacion => f_publicacion, :idioma => idioma, :email => session[:email] )
-  
-  redirect '/'
+  if Biblioteca.first_or_create(:img => img, :titulo  => titulo, :autores => autores, :editorial => editorial, :categoria => categoria, :url_google => url_google, :isbn10 => isbn10, :isbn13 => isbn13, :descripcion => descripcion, :npag => npag, :f_publicacion => f_publicacion, :idioma => idioma, :email => session[:email] ) then
+    redirect '/1'
+  else
+    redirect '/-1'
+  end
 end
 
 get '/sign_google/?' do
