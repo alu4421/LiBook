@@ -48,10 +48,17 @@ Base = 36 #base alfanumerica 36, no contiene la ñ para la ñ incorporar la base
 #End User Control
 
 
-get'/:opc?' do
-  if params[:opc] then
-    @opc = params[:opc]
+get '/' do
+  if session[:auth] then
+    @list = Biblioteca.all(:order => [ :id.asc ], :email => session[:email])
+    haml :principal
+  else
+    haml :index
   end
+end
+
+get %r{/(1|2|-1)} do
+  @opc = request.path
   if session[:auth] then
     @list = Biblioteca.all(:order => [ :id.asc ], :email => session[:email])
     haml :principal
@@ -68,13 +75,6 @@ get '/info/:id' do
   @info = Biblioteca.all(:id => params[:id])
   haml :info
 end
-
-#pruebas
-post '/data' do
-  File.open('img/escaner/data.jpeg','wb') {|file| file.write request.body.read }
-  "Result: photo saved!"
-end
-#fin
 
 #Redirect
 get '/auth/:name/callback' do
@@ -222,6 +222,7 @@ end
 
 get '/logout' do
   session.clear
+  puts "hola"
   redirect '/'
 end
 

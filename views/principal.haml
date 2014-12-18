@@ -1,17 +1,16 @@
-
 .row
 	.text-center.v-center
-		-if @opc == '1'
+		-if @opc == '/1'
 			%a{:href => "/"}
 				.alert.alert-success.alert-dismissable
 					%button.close{"data-dismiss" => "alert",:type => "button"} &times;
 					%h2 Libro insertado correctamente.
-		-elsif @opc == '-1'
+		-elsif @opc == '/-1'
 			%a{:href => "/"}
 				.alert.alert-success.alert-dismissable
 					%button.close{"data-dismiss" => "alert", :type => "button"} &times;
 					%h2 Error Insertar libro
-		-elsif @opc == '2'
+		-elsif @opc == '/2'
 			%a{:href => "/"}
 				.alert.alert-success.alert-dismissable
 					%button.close{"data-dismiss" => "alert", :type => "button"} &times;
@@ -45,13 +44,14 @@
 				- @list.each do |valor|
 					%tr
 						%td 
-							%a{:href=>"/info/#{valor.id}", :target=>"_blank"}
+							%a{:href=>"/info/#{valor.id}"}
 								%img{:class => "img-responsive", :src=>"#{valor.img}", :width => "50"}/
 						%td
-							%a{:href=>"/info/#{valor.id}" , :target=>"_blank"} #{valor.titulo}
+							%a{:href=>"/info/#{valor.id}"} #{valor.titulo}
 						%td 
-							%a{:href=>"/info/#{valor.id}" , :target=>"_blank"} #{valor.autores}
+							%a{:href=>"/info/#{valor.id}"} #{valor.autores}
 						%td 
-							%a{:href=>"/info/#{valor.id}" , :target=>"_blank"} #{valor.editorial}
+							%a{:href=>"/info/#{valor.id}"} #{valor.editorial}
 						%td 
-							%a{:href=>"/info/#{valor.id}" , :target=>"_blank"} #{valor.categoria}
+							%a{:href=>"/info/#{valor.id}"} #{valor.categoria}
+		.v-center

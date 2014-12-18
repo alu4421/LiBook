@@ -19,7 +19,9 @@
 			%h3 ISBN13: #{valor.isbn13}
 		.col-xs-12
 			%h2 Sinopsis:
-			%h2 #{valor.descripcion}
+			%h4 #{valor.descripcion}
 
 		.col-xs-12
-			%a{:href=>"#{valor.url_google}" , :target=>"_blank"} Pinche aquí para acceder a más información en Google.
+			%a{:href=>"#{valor.url_google}" , :target=>"_blank"}
+				%img.img-thumbnail.center-block{:alt => "Imagen libro #{valor.titulo}", :src => "/img/google_books.png"}/
+.v-center
